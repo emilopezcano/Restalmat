@@ -1,0 +1,72 @@
+---
+title: "Actividad RSA"
+author: "Emilio López cano"
+date: "2/16/2019"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Codificar mensaje
+
+Esta actividad se realiza en dos grupos.
+
+1. Elige un par de números $p$, $q$, para crear tus claves pública y privada, de entre
+las siguientes opciones:
+
+  - 3 y 13
+  - 5 y 11
+  - 5 y 7
+  - 7 y 11
+  - 5 y 13
+  
+3. Calcula $\varphi(n) = (p-1) \cdot (q-1)$
+
+2. Obtén tu clave pública:
+
+  - $n = p\cdot q$
+  
+  - $e < \varphi(n)$ y sin divisores comunes
+  
+3. Obtén tu clave privada:
+
+  - $d$ tal que $d \cdot e =1\; (\textit{mod}\; \varphi(x))$. O sea,
+  un número que multiplicado por $e$ y dividido por $\varphi(x)$ dé 1.
+  
+4. Publica en la pizarra tu clave pública y anota la del otro grupo.
+
+5. Codifica un mensaje (una o dos palabra máximo) con la clave
+pública del otro grupo.
+
+6. Comparte el mensaje codificado en la pizarra.
+
+## Descodificar mensaje
+
+
+7. El otro grupo habrá codificado un mensaje para ti que también está en la
+pizarra. Descodifícalo con tu clave privada.
+
+8. Comprobad que los mensajes descodificados se corresponden con los enviados.
+
+## Criptoanálisis y hackeo de la clave
+
+9. Busca una estrategia para averiguar la clave privada del otro grupo. 
+
+10. Repetid el ejercicio, pero en este caso un alumno de cada grupo intercepta
+el mensaje enviado y lo descifra antes que el receptor.
+
+
+## Codificación letras
+
+```{r, echo=FALSE, R.options=list(width=100)}
+LETRAS <- c(LETTERS[1:14], "Ñ", LETTERS[15:26])
+t(data.frame(código = 1:27, row.names = LETRAS))
+```
+
+  
+  
+  

@@ -1,0 +1,48 @@
+---
+title: "Hackaton"
+output:
+  html_document: default
+  html_notebook: default
+---
+
+1. Cada usuario tiene un par de claves pública-privada
+
+2. El mensaje se envía a cada uno con su clave pública
+
+3. A ver quién lo descifra primero
+
+4. La clave pública del profesor es 3. ¿Alguien es capaz de averiguar su clave privada? 
+
+```{r, echo=FALSE}
+source("actividad.R")
+alumnos <- list(profesor = list(publica = c(15, 3), #3*5 
+                              privada = 3),
+                Irene = list(publica = c(5973, 7), 
+                              privada = NA),
+                Goyo = list(publica = c(85, 5), 
+                              privada = NA),
+                # OscarAB = list(publica = c(6, 1),
+                #               privada = NA),
+                Aquilino = list(publica = c(91, 5), 
+                              privada = NA),
+                Dani = list(publica = c(17473, 11), 
+                              privada = NA),
+                OscarAL = list(publica = c(7663, 7), 
+                              privada = NA),
+                Luis = list(publica = c(143, 7), 
+                              privada = NA),
+                Juan = list(publica = c(143, 7), 
+                              privada = NA),
+                Carmen = list(publica = c(65, 7), 
+                              privada = NA),
+                Belen = list(publica = c(15, 3), 
+                              privada = NA),
+                Maria = list(publica = c(39, 5), 
+                              privada = NA)
+                )
+mensajes <- lapply(alumnos, function(x){
+  encriptar("campeon", x[["publica"]])
+})
+mensajes
+```
+
